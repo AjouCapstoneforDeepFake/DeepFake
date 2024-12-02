@@ -102,13 +102,13 @@ SimSwap 모델로 생성한 FAKE 이미지 데이터
 
 #### <데이터셋 구성>
 - Train Dataset : Test Dataset = 8 : 2로 구성
-Train Dataset 24,000장 
-Real 12,000장
-Fake 12,000장
+- Train Dataset 24,000장 
+   - Real 12,000장
+   - Fake 12,000장
 
-Test Dataset 6,000장
-Real 3,000장
-Fake 3,000장 
+- Test Dataset 6,000장
+   - Real 3,000장
+   - Fake 3,000장 
 
 #### <하이퍼파라미터 조정 범위>
 Learning rate : 0.05에서 0.0001 사이
