@@ -67,6 +67,13 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 
 ---
 
+## **개발환경**
+- Goolge Colab, Google Drive 
+- Local(Desktop)
+
+
+----
+
 ## **사용 데이터** 
 1. AI 허브 딥페이크 변조 영상 데이터 
 2. AI 허브 한국인 안면 이미지 데이터
@@ -111,6 +118,7 @@ VGG2 Face 이미지 데이터
 ![generation_result](./images/generation_result.jpg)
 
 ### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
+- 모델 설명 넣기 
 - pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
 
 #### <사용 데이터 출처>
