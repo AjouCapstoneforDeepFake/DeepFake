@@ -4,12 +4,8 @@
 
 **FakeME**는 **DeepFake**의 **Fake**와 **Media**의 **ME**를 결합하여 만들어진 이름으로, Deepfake 기술을 활용한 생성 및 탐지 기능을 통합적으로 제공하는 시스템입니다.
 
-
-
-<br><br>
-
-
 ---------
+<br><br>
 
 ## **프로젝트 개요**
 
@@ -28,6 +24,7 @@
 
 FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성과 탐지 기능을 동시에 처리하는 통합 시스템**을 구축함으로써 기술의 긍정적 잠재력을 극대화하고 부정적 영향을 최소화하기 위해 개발되었습니다.
 
+<br><br>
 ---
 
 ##  주요 기능
@@ -39,7 +36,7 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
    - 글로벌 데이터셋(FaceForensics++ 등) 기반 모델로 한국인 얼굴 특징에 최적화되지 않음
 3. **Deepfake 악용 방지 시스템 부재**  
    - SNS 및 동영상 공유 플랫폼에서 콘텐츠 확산 차단 불가
-
+<br><br>
 ### 위와 같은 한계를 극복하기 위해 다음과 같은 요구사항 분석을 통해 시스템 개발을 진행
 1. **통합 시스템 제공**  
    - Deepfake **생성 및 탐지 기능을 통합적으로 제공**
@@ -70,13 +67,14 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 ### 3. 부적절한 Deepfake 신고 기능
 - 사전에 Deepfake 콘텐츠 탐지가 제대로 되지 않았을 경우, Deepfake 탐지를 우회하여 게시물을 업로드하는 경우 등 발생할 수 있는 다양한 상황을 고려하여 사용자 신고 기능을 사용한다. 사용자가 SNS를 사용하다 부적절한 Deepfake 콘텐츠나, Deepfake 콘텐츠임에도 #Deepfake 해시태그가 설정되지 않은 게시물을 발견했을 때 해당 게시물을 신고하면 Deepfake 탐지를 수행하고 SNS 관리자에게 신고가 접수된다. 각 SNS 운영 관리 정책에 따라 추후 조치가 이루어진다.
 
+<br><br>
 ---
 
 ## **개발환경**
 - Goolge Colab, Google Drive 
 - Local(Desktop)
 
-
+<br><br>
 ----
 
 ## **사용 데이터** 
@@ -84,6 +82,7 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 2. AI 허브 한국인 안면 이미지 데이터
 3. VGG FACE2 고화질 이미지 데이터
 4. SimSwap으로 생성한 fake 이미지 데이터 
+<br><br>
 ---
 
 ## **데이터 전처리**
@@ -92,25 +91,27 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 3. 얼굴 인식 후 224x224 size로 crop
 4. Rotation, Flip, Shearing, Translation 등 데이터 증강 기법 활용하여 데이터 다양성 확보
 5. 모델에 input 되기 전 ImageNet Dataset의 Mean, std 값으로 이미지 정규화(Normalization) 진행
+<br><br>
 ----
 ## < 사용 모델 및 파인튜닝  >
 ### 1. Deepfake 생성 기능에 사용된 인공지능 모델 - simswap 
 - pytorch로 구현된 SimSwap 모델 사용
 
+<br><br>
 
 ### <사용 데이터 출처>
 AI 허브의 딥페이크 변조 영상 REAL 데이터
 AI 허브의 한국인 안면 이미지 데이터 
 VGG2 Face 이미지 데이터
 
-
+<br><br>
 ### <추가 튜닝 진행>
 - 성능 개선을 위해 특정 레이어에 필요한 파라미터 추가
 -  모델 학습 안정성을 위해 초기화되지 않은 레이어에 대해 weight_init 함수를 적용하여 안정적인 가중치 초기화 수행
 - Deepfake 품질 개선을 위한 파라미터 및 초기화 설정 세부 조정
 - OpenCV를 통한 Skin Smoothing 진행
 - 한국인 최적화 모델을 위해 전이학습 진행
-
+<br><br>
 ### <비가시적 워터마크 삽입>
  - 탐지 보조를 위해 생성 시 비가시적 워터마크 삽입
  - 텍스트를 기반으로 템플릿 이미지 생성, 이미지 내에 랜덤하게 배치
@@ -118,18 +119,21 @@ VGG2 Face 이미지 데이터
  - 이를 기반으로 워터마크 복원
 
 
-
+<br><br>
 #### <Deepfake 생성 결과 예시>
 ![generation_result](./images/generation_result.jpg)
 
+<br><br>
 ### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
 - 모델 설명 넣기 
 - pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
 
+<br><br>
 #### <사용 데이터 출처>
 AI 허브의 딥페이크 변조 영상 데이터 REAL / FAKE 
 SimSwap 모델로 생성한 FAKE 이미지 데이터 
 
+<br><br>
 #### <데이터셋 구성>
 - Train Dataset : Test Dataset = 8 : 2로 구성
 - Train Dataset 24,000장 
@@ -140,6 +144,7 @@ SimSwap 모델로 생성한 FAKE 이미지 데이터
    - Real 3,000장
    - Fake 3,000장 
 
+<br><br>
 #### <하이퍼파라미터 조정 범위>
 Learning rate : 0.05에서 0.0001 사이
 Optimizer : AdamW
@@ -147,6 +152,7 @@ L2 정규화 weight decay : 0.01에서 0.005 사이
 Dropout rate : 0.2에서 0.75 사이
 Epoch : 2에서 20 사이 
 
+<br><br>
 #### <성능 향상 추이>
 ![Accuracy_1](./images/accuracy_1.jpg)
 ![Accuracy_2](./images/accuracy_2.jpg)
