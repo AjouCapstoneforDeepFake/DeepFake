@@ -96,7 +96,7 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 ## < 사용 모델 및 파인튜닝  >
 ### 1. Deepfake 생성 기능에 사용된 인공지능 모델 - simswap 
 - pytorch로 구현된 SimSwap 모델 사용
-
+- [An Efficient Framework For High Fidelity Face Swapping](https://arxiv.org/abs/2106.06340)
 <br><br>
 
 ### <사용 데이터 출처>
