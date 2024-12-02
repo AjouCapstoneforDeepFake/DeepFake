@@ -125,7 +125,7 @@ VGG2 Face 이미지 데이터
 
 <br><br>
 ### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
-- Smaller Models and Faster training
+- [Smaller Models and Faster training](https://arxiv.org/abs/2104.00298) 
 - Google에서 개발한 EfficientNet의 개선된 버전으로, 이미지 분류와 같은 vision task를 더 빠르고 효율적으로 처리하기 위해 설계된 모델
 - pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
 
