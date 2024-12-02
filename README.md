@@ -120,21 +120,22 @@ VGG2 Face 이미지 데이터
 
 
 <br><br>
-#### <Deepfake 생성 결과 예시>
+### <Deepfake 생성 결과 예시>
 ![generation_result](./images/generation_result.jpg)
 
 <br><br>
 ### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
-- 모델 설명 넣기 
+- Smaller Models and Faster training
+- Google에서 개발한 EfficientNet의 개선된 버전으로, 이미지 분류와 같은 vision task를 더 빠르고 효율적으로 처리하기 위해 설계된 모델
 - pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
 
 <br><br>
-#### <사용 데이터 출처>
+### <사용 데이터 출처>
 AI 허브의 딥페이크 변조 영상 데이터 REAL / FAKE 
 SimSwap 모델로 생성한 FAKE 이미지 데이터 
 
 <br><br>
-#### <데이터셋 구성>
+### <데이터셋 구성>
 - Train Dataset : Test Dataset = 8 : 2로 구성
 - Train Dataset 24,000장 
    - Real 12,000장
@@ -145,7 +146,7 @@ SimSwap 모델로 생성한 FAKE 이미지 데이터
    - Fake 3,000장 
 
 <br><br>
-#### <하이퍼파라미터 조정 범위>
+### <하이퍼파라미터 조정 범위>
 Learning rate : 0.05에서 0.0001 사이
 Optimizer : AdamW
 L2 정규화 weight decay : 0.01에서 0.005 사이
@@ -153,10 +154,10 @@ Dropout rate : 0.2에서 0.75 사이
 Epoch : 2에서 20 사이 
 
 <br><br>
-#### <성능 향상 추이>
+### <성능 향상 추이>
 ![Accuracy_1](./images/accuracy_1.jpg)
 ![Accuracy_2](./images/accuracy_2.jpg)
 
-#### <Deepfake 탐지 결과 예시>
+### <Deepfake 탐지 결과 예시>
 ![result](./images/detection_result_image.jpg)
 
