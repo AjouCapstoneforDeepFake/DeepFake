@@ -1,6 +1,6 @@
 # DeepFake Model Overview
 
-## Key Concepts
+# Key Concepts
 
 ### Source Face
 - The original face to be swapped.
@@ -13,8 +13,6 @@
 - **Identity**: 눈, 코, 입, 피부 톤과 같은 독특한 얼굴 특징이 포함
 - **Attribute**: 위치, 표현, 각도와 같은 컨텍스트 기반 또는 감정적 특징이 포함
 - **Goal**: 대상 얼굴의 속성을 적용하면서 원본 얼굴의 동일성을 유지
-
----
 
 ## 구현 방법
 
