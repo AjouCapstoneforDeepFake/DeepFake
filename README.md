@@ -54,8 +54,72 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 3. **Deepfake 생성 및 탐지 기능을 통합적으로 제공하는 시스템 개발
 
    
+---
+## **서비스 주요 기능**
+### 1. Deepfake 생성 기능
+- Source Image(얼굴 이미지)와 Target Image(배경 이미지)를 사용자로부터 입력받아 Deepfake 콘텐츠를 생성해준다. 사용자는 생성된 Deepfake 콘텐츠를 확인하고, 다시 재생성 요청을 하거나 다운로드 받을 수 있다. 
 
+### 2. Deepfake 탐지 기능
+- SNS 및 동영상 공유 플랫폼에 게시물을 올리기 전 Deepfake 콘텐츠 여부를 탐지한다. 해당 게시물의 미디어 콘텐츠가 Deepfake일 경우 #Deepfake 해시태그가 자동으로 설정된다. 이를 통해 타사용자들이 Deepfake 게시물임을 알 수 있도록 한다. 
+
+### 3. 부적절한 Deepfake 신고 기능
+- 사전에 Deepfake 콘텐츠 탐지가 제대로 되지 않았을 경우, Deepfake 탐지를 우회하여 게시물을 업로드하는 경우 등 발생할 수 있는 다양한 상황을 고려하여 사용자 신고 기능을 사용한다. 사용자가 SNS를 사용하다 부적절한 Deepfake 콘텐츠나, Deepfake 콘텐츠임에도 #Deepfake 해시태그가 설정되지 않은 게시물을 발견했을 때 해당 게시물을 신고하면 Deepfake 탐지를 수행하고 SNS 관리자에게 신고가 접수된다. 각 SNS 운영 관리 정책에 따라 추후 조치가 이루어진다.
 
 ---
 
+## **사용 데이터** 
+1. AI 허브 딥페이크 변조 영상 데이터 
+2. AI 허브 한국인 안면 이미지 데이터
+3. VGG FACE2 고화질 이미지 데이터
+4. SimSwap으로 생성한 fake 이미지 데이터 
 ---
+
+## **데이터 전처리**
+1. Video data를 Image data로 전환
+2. OpenCV의 MTCNN과 facenet-pytorch를 사용하여 얼굴 인식
+3. 얼굴 인식 후 224x224 size로 crop
+4. Rotation, Flip, Shearing, Translation 등 데이터 증강 기법 활용하여 데이터 다양성 확보
+5. 모델에 input 되기 전 ImageNet Dataset의 Mean, std 값으로 이미지 정규화(Normalization) 진행
+----
+## < 사용 모델 및 파인튜닝  >
+### 1. Deepfake 생성 기능에 사용된 인공지능 모델 - simswap 
+
+
+
+
+
+
+
+
+
+
+### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
+- pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
+
+#### <사용 데이터 출처>
+AI 허브의 딥페이크 변조 영상 데이터 REAL / FAKE 
+SimSwap 모델로 생성한 FAKE 이미지 데이터 
+
+#### <데이터셋 구성>
+- Train Dataset : Test Dataset = 8 : 2로 구성
+Train Dataset 24,000장 
+Real 12,000장
+Fake 12,000장
+
+Test Dataset 6,000장
+Real 3,000장
+Fake 3,000장 
+
+#### <하이퍼파라미터 조정 범위>
+Learning rate : 0.05에서 0.0001 사이
+Optimizer : AdamW
+L2 정규화 weight decay : 0.01에서 0.005 사이
+Dropout rate : 0.2에서 0.75 사이
+Epoch : 2에서 20 사이 
+
+#### <성능 향상 추이>
+![Accuracy_1](./images/accuracy_1.jpg)
+![Accuracy_2](./images/accuracy_2.jpg)
+
+#### <Deepfake 탐지 결과 예시>
+![result](./images/detection_result_image.jpg)
