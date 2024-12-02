@@ -3,8 +3,7 @@
 # Key Concepts
 
 ### Source Face
-- The original face to be swapped.
-- Represents the **identity**: facial features, proportions, and skin tone.
+- 교환할 원래 얼굴
 
 ### Target Face
 - 교체될 얼굴이 적용될 대상 얼굴
