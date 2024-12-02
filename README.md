@@ -93,6 +93,9 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 
 
 
+#### <Deepfake 생성 결과 예시>
+
+
 ### 2. Deepfake 탐지 기능에 사용된 인공지능 모델 - EfficientNet-V2 
 - pytorch에서 제공하는 사전학습된 EfficientNet-V2 S size 모델 사용
 
@@ -123,3 +126,4 @@ Epoch : 2에서 20 사이
 
 #### <Deepfake 탐지 결과 예시>
 ![result](./images/detection_result_image.jpg)
+
