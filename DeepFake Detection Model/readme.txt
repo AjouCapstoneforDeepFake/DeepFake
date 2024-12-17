@@ -22,7 +22,9 @@ Train_dataset/fake
 
 4. 본인에게 맞는 경로를 작성하여 코드를 작동시켜야 합니다. 설정해야하는 경로를 다 표시해두었습니다.  
 
-5. 가중치 파일이 업로드 되면 그 파일을 사용하여 deepfake_image_detection.py, deepfake_video_detection.py 파일에서 가중치 파일 경로와 이미지 파일 경로를 설정하여 작동하면 됩니다. 
+5. 하이퍼파라미터를 조정해가며 최적의 가중치 값을 찾습니다. 
+
+6. 가중치 파일이 업로드 되면 그 파일을 사용하여 deepfake_image_detection.py, deepfake_video_detection.py 파일에서 가중치 파일 경로와 이미지 파일 경로를 설정하여 작동하면 됩니다. 
 
 
 
