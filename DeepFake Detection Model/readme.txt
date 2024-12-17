@@ -9,6 +9,3 @@ custom dataset에 맞게 하이퍼파라미터 값들을 조정하여 사용하�
 Train_dataset
 https://drive.google.com/drive/folders/169_FdHIdCYYDcsOhB7Uh_0mSCj6LeNnw?usp=sharing
 
-Test_dataset
-https://drive.google.com/drive/folders/1KTaYarD5b6fTJ3pQkfykZlDhMKGX9tPW?usp=sharing
-
