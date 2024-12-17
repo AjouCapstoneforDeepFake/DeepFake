@@ -9,3 +9,15 @@ custom dataset에 맞게 하이퍼파라미터 값들을 조정하여 사용하�
 Train_dataset
 https://drive.google.com/drive/folders/169_FdHIdCYYDcsOhB7Uh_0mSCj6LeNnw?usp=sharing
 
+
+## 소스코드 실행 방법
+1. Train_dataset folder 안에 real과 fake 폴더로 구분지어진 상태로 Train_dataset을 준비합니다. 
+Train_dataset/real 
+Train_dataset/fake 
+
+2. Goolge Colab에서 Google Drive를 mount합니다.
+
+3. 그 외에 코드를 작동하는 데에 필요한 라이브러리를 설치하고 import 해줍니다.
+
+4. 하나씩 차례대로 코드를 작동해줍니다. 
+
