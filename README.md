@@ -82,9 +82,9 @@ FakeME는 이러한 Deepfake 기술의 **양면성**을 연구하여, **생성�
 ----
 
 ## **사용 데이터** 
-1. AI 허브 딥페이크 변조 영상 데이터 
-2. AI 허브 한국인 안면 이미지 데이터
-3. VGG FACE2 고화질 이미지 데이터
+1. AI 허브 딥페이크 변조 영상 데이터 https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&dataSetSn=55
+2. AI 허브 한국인 안면 이미지 데이터 https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=83
+3. VGG FACE2 고화질 이미지 데이터 
 4. SimSwap으로 생성한 fake 이미지 데이터 
 <br><br>
 ---
