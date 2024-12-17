@@ -10,7 +10,8 @@ Train_dataset
 https://drive.google.com/drive/folders/169_FdHIdCYYDcsOhB7Uh_0mSCj6LeNnw?usp=sharing
 
 
-## 소스코드 실행 방법
+
+## 소스코드 실행 방법 ## 
 1. Train_dataset folder 안에 real과 fake 폴더로 구분지어진 상태로 Train_dataset을 준비합니다. 
 Train_dataset/real 
 Train_dataset/fake 
